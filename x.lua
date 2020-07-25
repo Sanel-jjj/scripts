@@ -33,8 +33,25 @@ function main()
     while true do
         wait(0)
         
+        if isKeyDown(VK_7) then
+            sampShowDialog(10,"{4682B4}X {FFFFFF}| Главное меню","{4682B4}1 {FFFFFF}Журнал обновлений\n{4682B4}2 {FFFFFF}Настройки \n{4682B4}3 {FFFFFF}Контакты","Выбор","",2)
+        end
+
+        local result, button, list, imput = sampHasDialogRespond(10)
+        if result then
+            if button == 1 then
+                if list == 0 then
+                    sampShowDialog(11,"{4682B4}X {FFFFFF}| Журнал обновлений","24.07.2020\nxx.xx.xxxx\nxx.xx.xxxx","Выбор","Назад",2)
+                elseif list == 1 then
+                    sampShowDialog(12,"{4682B4}X {FFFFFF}| Настройки","-\n-\n-\n-","Выбор","Назад",2)
+                elseif list == 2 then
+                    sampShowDialog(13,"{4682B4}X {FFFFFF}| Контакты","{4682B4}Автор скрипта{FFFFFF}: Faust Van Helsing (jjj)\n{4682B4}VK{FFFFFF}: https://vk.com/canelhan","Назад","",0) 
+                end    
+            end
+        end
     -- Бесконечный блок
     end
+end
 function cmd_xmenu(arg)
     sampAddChatMessage("Окей",-1)
 end
